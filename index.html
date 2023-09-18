@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Cadastro | Entrar</title>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <div class="wrapper">
+        <a href="https://rafa-mmf.github.io/portifolio2.0/" target="_blank"><img id="logo" src="/assets/img/logo.svg"
+                alt="Logo Rafa Mendes"></a>
+        <h1>Bem vindo(a) a tela de cadastro!</h1>
+        <br>
+        <div class="title-text">
+            <div class="title login">Faça seu login</div>
+            <div class="title signup">Faça seu cadastro</div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slider" id="login" checked>
+                <input type="radio" name="slider" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Cadastro</label>
+                <div class="slide-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="" method="post" class="login">
+                    <div class="field">
+                        <input type="email" name="login_email" id="email" placeholder="Insira seu email" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="login_senha" id="senha" placeholder="Insira sua senha" required>
+                    </div>
+                    <div class="pass-link"><a href="#">Esqueceu a senha?</a></div>
+                    <div class="field">
+                        <a href="#" class="flip">
+                            <div class="inner">
+                                <div class="front">Entrar</div>
+                                <div class="back">Entrar</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="signup-link">Não é cadastrado? <a href="#">Faça Cadastro agora</a></div>
+                </form>
+                <form action="" method="post" class="signup">
+                    <div class="field">
+                        <input name="email_usuario" id="email_usuario" type="email" placeholder="Insira seu email"
+                            required>
+                    </div>
+                    <div class="field">
+                        <input name="senha_usuario" id="senha_usuario" type="password" placeholder="Insira sua senha"
+                            minlength="3" maxlength="10" required>
+                    </div>
+                    <div class="field">
+                        <input name="confsenha_usuario" id="confsenha_usuario" type="password"
+                            placeholder="Confirme sua senha" minlength="3" maxlength="10" required>
+                    </div>
+                    <div class="field">
+                        <select name="select" id="select">
+                            <option value="">Selecione uma opção</option>
+                            <option value="01">Opção 01</option>
+                            <option value="02">Opção 02</option>
+
+                        </select>
+                    </div>
+                    <div class="field signup-link2">
+                        <a href="" class="flip">
+                            <div class="inner">
+                                <div class="front">Cadastrar</div>
+                                <div class="back">Cadastrar</div>
+                            </div>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.querySelector("form.login")
+        const signupForm = document.querySelector("form.signup")
+        const loginBtn = document.querySelector("label.login")
+        const signupBtn = document.querySelector("label.signup")
+        const signupLink = document.querySelector(".signup-link a")
+        const signupLink2 = document.querySelector(".signup-link2 a")
+        const loginText = document.querySelector(".title-text .login")
+        const signupText = document.querySelector(".title-text .signup")
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%"
+            loginText.style.marginLeft = "-50%"
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%"
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        })
+        signupLink2.onclick = (() => {
+            loginBtn.click();
+            return false;
+        })
+    </script>
+
+</body>
+
+</html>
